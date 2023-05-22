@@ -1,15 +1,18 @@
+//4  CREATE SERVER BASIC
 // request response server test
+/*
 let http=require('http');
 let server= http.createServer(function (req, res){
     res.end("Hello node js server test");
 });
 
 server.listen(5050);
-console.log("server run done"); //*/
+console.log("server run done"); */
 
-//get request
 
-/*let http = require("http");
+// 5  get request response model
+//6 Request Response Model Works in node js
+let http = require("http");
 let server = http.createServer(function (req, res) {
   if (req.url === "/") {
     req.writeHead(200, { "Content-type": "text/html" });
@@ -29,4 +32,4 @@ let server = http.createServer(function (req, res) {
 server.listen(5050);
 console.log("server run done");
 
-*/
+
