@@ -72,17 +72,7 @@ console.log("server run done");
 
 //11 Understanding Synchronous Asynchronous
 
-//12 Understanding Synchronous Asynchronous
+//12 ,13Understanding Synchronous Asynchronous
+//13
 
-
-
-
-
-
-
-
-
-
-
-
-
+//14  14 fs ready file ready html page
