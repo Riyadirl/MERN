@@ -61,28 +61,32 @@ let server = http.createServer(function (req, res) {
 server.listen(3000);
 console.log("server listening successfully");
 
-*/
+
 
 //17 fs File Write Sync
 
 let fs = require("fs");
 let http = require("http");
 
-let server = http.createServer(function (req, res) {
-  if ((req.url = "/")) {
-    fs.writeFile("demo.txt", "hello this is a demo", function (error) {
-      if (error) {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.writeHead("File write failed");
-        res.end();
-      } else {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.writeHead("File write succeeded");
-        res.end();
-      }
-    });
-  }
-});
+if ((req.url = "/")) {
+  let error = fs.writeFileSync(
+    "demoSync.txt",
+    "hello this is a file synchronously"
+  );
 
-server.listen(3000);
+  if (error) {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.writeHead("File write failed");
+    res.end();
+  } else {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.writeHead("File write succeeded");
+    res.end();
+  }
+}
+
+server.listen(4040);
 console.log("server listening successfully");
+*/
+
+//18 fs File Rename Async
