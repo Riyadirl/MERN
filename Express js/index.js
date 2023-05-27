@@ -20,7 +20,8 @@ app.listen(8000, function () {
 */
 
 //3 express js routing
-
+//using postman
+/*
 let express = require("express");
 
 app = express();
@@ -29,19 +30,38 @@ app.get("/", function (req, res) {
   res.send("home page");
 });
 
-app.get("/about", function (req, res) // /about-> URI
+app.post("/about", function (req, res) // /about-> URI
 {  
   res.send("about page!");
 });
 
-app.get("/terms", function (req, res) {
+app.put("/terms", function (req, res) {
   res.send("terms!");
 });
 
-app.get("/contact", function (req, res) {
+app.delete("/contact", function (req, res) {
   res.send("contact us");
 });
 
 app.listen(8080, function () {
   console.log("Server Run Success");
 });
+
+*/
+
+//4 Four Topic We Need To Focus
+/*
+1>request
+2>response
+3>middleware
+4>database operation
+
+
+//5
+1>response
+        Body
+        header
+        status
+        cookies
+
+*/
