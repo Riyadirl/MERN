@@ -354,7 +354,7 @@ app.listen(9090, function () {
   console.log("Server Run Success");
 });
 
-*/
+
 ///////////////////////////////
 ///////////////////////////////
 
@@ -367,7 +367,42 @@ app.post("/", function (req, res) {
 });
 
 //19 Post Request With URL Query
+app.post("/eleven", function (req, res) {
+  let first = req.query.first;
+  let last = req.query.last;
 
-app.listen(6060, function () {
+  res.send(first + " " + last);
+  //postman =>  http://localhost:6000/eleven?first=riyad&last=hasan
+});
+
+//20 Post Request With Header Properties
+app.get("/12", function (req, res) {
+  let user = req.header("user");
+  let password = req.header("password");
+  res.send("user: " + user + "password: " + password);
+});
+
+app.listen(8000, function () {
+  console.log("Server Run Success");
+});
+
+
+*/
+
+//21 Post application json
+let express = require("express");
+let bodyParser = require("body-parser");
+
+app = express();
+
+let.use(bodyParser.json());
+
+app.post("/13", function (req, res) {
+  let jsonData = res.body;
+  let jsonString = JSON.stringify(jsonData);
+  res.send(jsonString);
+});
+
+app.listen(9090, function () {
   console.log("Server Run Success");
 });
