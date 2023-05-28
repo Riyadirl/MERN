@@ -387,7 +387,8 @@ app.listen(8000, function () {
 });
 
 
-*/
+//////////////////////
+//////////////////////
 
 //21 Post application json
 let express = require("express");
@@ -404,5 +405,24 @@ app.post("/13", function (req, res) {
 });
 
 app.listen(9090, function () {
+  console.log("Server Run Success");
+});
+*/
+
+//22 Working With Multipart Form Data
+let express = require("express");
+let multer = require("multer");
+let multer = multer();
+
+let app = express();
+app.use(multer.array());
+app.use(express.static("public"));
+
+app.post("/", function (req, res) {
+  let JSONData = req.body;
+  res.send(JSON.stringify(JSONData));
+});
+
+app.listen(8000, function () {
   console.log("Server Run Success");
 });
