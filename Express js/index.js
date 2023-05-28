@@ -247,8 +247,12 @@ app.get("/india", function (req, res) {
 app.listen(3030, function () {
   console.log("Server Run Success");
 });
-*/
-
+///////////////////////////////////////////////////
+////////////////////////////////////////////////
+///////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/ ////  
+///////////////////////////////////////////
 let express = require("express");
 
 app = express();
@@ -309,5 +313,61 @@ app.get("/eight", function (req, res) {
 });
 
 app.listen(8080, function () {
+  console.log("Server Run Success");
+});
+
+//14 Working With Request
+
+////////////////////////////////////
+///////////////////////////////////
+
+//////////////////////////////////////
+////////////////////////////////
+//14 Working With Request
+
+let express = require("express");
+app = express();
+
+//15 Simple Get Request
+app.get("/", function (req, res) {
+  res.end("this is a simple get request");
+});
+
+//16 Get Request With URL Query
+app.get("/nine", function (req, res) {
+  let fn = req.query.fn;
+  let ln = req.query.ln;
+  res.end(fn + "  " + ln);
+  //postman -> http://localhost:7000/nine?fn=Mahbub&ln=Riyad
+});
+
+//17 Working With Get Request Header
+app.get("/ten", function (req, res) {
+  let fn = req.header("fn");
+  let ln = req.query("ln");
+  res.end(fn + "  " + ln);
+});
+
+
+
+app.listen(9090, function () {
+  console.log("Server Run Success");
+});
+
+*/
+///////////////////////////////
+///////////////////////////////
+
+//18 Simple Post Request
+let express = require("express");
+app = express();
+
+app.post("/", function (req, res) {
+  res.end("this is a simple post request");
+});
+
+//19 Post Request With URL Query
+
+app.listen(6060, function () {
   console.log("Server Run Success");
 });
