@@ -3,11 +3,10 @@
 //developing servre side rest API
 
 //2 Express Application
-/*
+
 let express = require("express");
 
 app = express();
-
 
 app.get("/", function (req, res) {
   res.send("Hello express!");
@@ -17,11 +16,9 @@ app.listen(8000, function () {
   console.log("Server Run Success");
 });
 
-*/
-
 //3 express js routing
 //using postman
-/*
+
 let express = require("express");
 
 app = express();
@@ -30,10 +27,15 @@ app.get("/", function (req, res) {
   res.send("home page");
 });
 
-app.post("/about", function (req, res) // /about-> URI
-{  
-  res.send("about page!");
-});
+app.post(
+  "/about",
+  function (
+    req,
+    res // /about-> URI
+  ) {
+    res.send("about page!");
+  }
+);
 
 app.put("/terms", function (req, res) {
   res.send("terms!");
@@ -47,17 +49,15 @@ app.listen(8080, function () {
   console.log("Server Run Success");
 });
 
-*/
-
 //4 Four Topic We Need To Focus
-/*
-1>request
-2>response
-3>middleware
-4>database operation
 
+//1>request
+//2>response
+//3>middleware
+//4>database operation
 
 //5
+/*
 1>response
         Body
         header
@@ -66,7 +66,7 @@ app.listen(8080, function () {
 */
 
 //6 Simple String Response
-/*
+
 let express = require("express");
 
 app = express();
@@ -111,17 +111,12 @@ app.listen(8000, function () {
   console.log("Server Run Success");
 });
 
-
-
 //8 JSON Response
 
 let express = require("express");
 
 app = express();
 
-//simple string response
-//res.send -- response body
-//res.end-- response ending point
 app.get("/one", function (req, res) {
   res.end("this is a simple string one");
 });
@@ -153,7 +148,6 @@ app.get("/four", function (req, res) {
 app.listen(5000, function () {
   console.log("Server Run Success");
 });
-
 
 //9 Response Download
 
@@ -196,7 +190,6 @@ app.get("/five", function (req, res) {
 app.listen(5050, function () {
   console.log("Server Run Success");
 });
-
 
 // 10 Response Redirect
 
@@ -248,11 +241,7 @@ app.listen(3030, function () {
   console.log("Server Run Success");
 });
 ///////////////////////////////////////////////////
-////////////////////////////////////////////////
-///////////////////////////////////////////////////
-/////////////////////////////////////////////////
-/ ////  
-///////////////////////////////////////////
+
 let express = require("express");
 
 app = express();
@@ -316,13 +305,8 @@ app.listen(8080, function () {
   console.log("Server Run Success");
 });
 
-//14 Working With Request
-
 ////////////////////////////////////
 ///////////////////////////////////
-
-//////////////////////////////////////
-////////////////////////////////
 //14 Working With Request
 
 let express = require("express");
@@ -348,14 +332,10 @@ app.get("/ten", function (req, res) {
   res.end(fn + "  " + ln);
 });
 
-
-
 app.listen(9090, function () {
   console.log("Server Run Success");
 });
 
-
-///////////////////////////////
 ///////////////////////////////
 
 //18 Simple Post Request
@@ -386,8 +366,6 @@ app.listen(8000, function () {
   console.log("Server Run Success");
 });
 
-
-//////////////////////
 //////////////////////
 
 //21 Post application json
@@ -407,7 +385,6 @@ app.post("/13", function (req, res) {
 app.listen(9090, function () {
   console.log("Server Run Success");
 });
-*/
 
 //22 Working With Multipart Form Data
 let express = require("express");
@@ -425,5 +402,35 @@ app.post("/", function (req, res) {
 });
 
 app.listen(8000, function () {
+  console.log("Server Run Success");
+});
+
+//23 File Upload
+let express = require("express");
+let multer = require("multer");
+
+let app = express();
+
+var storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, "./upload");
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.originalname);
+  },
+});
+
+let upload = multer({ storage: storage }).single("myfile");
+
+app.post("/", function (req, res) {
+  upload(req, res, function (err) {
+    if (err) {
+      res.send("file upload failed");
+    } else {
+      res.send("file uploaded");
+    }
+  });
+});
+app.listen(6060, function () {
   console.log("Server Run Success");
 });
