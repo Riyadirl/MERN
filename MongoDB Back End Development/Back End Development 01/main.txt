@@ -13,4 +13,7 @@ Server-side:
     Server-side code is executed by the web server.
 
 2 Request Response Model
-    
+3 Routing And Controller Concept
+4 Middleware Concept
+5 Introducing JSON 
+
